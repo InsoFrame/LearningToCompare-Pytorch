@@ -37,10 +37,10 @@ if __name__ == '__main__':
 	best_accuracy = 0
 	for epoch in range(1000):
 
-		mini = MiniImagenet('../mini-imagenet/', mode='train', n_way=n_way, k_shot=k_shot, k_query=k_query,
+		mini = MiniImagenet('../../datasets/mini-imagenet/', mode='train', n_way=n_way, k_shot=k_shot, k_query=k_query,
 		                    batchsz=10000, resize=224)
 		db = DataLoader(mini, batchsz, shuffle=True, num_workers=8, pin_memory=True)
-		mini_val = MiniImagenet('../mini-imagenet/', mode='val', n_way=n_way, k_shot=k_shot, k_query=k_query,
+		mini_val = MiniImagenet('../../datasets/mini-imagenet/', mode='val', n_way=n_way, k_shot=k_shot, k_query=k_query,
 		                        batchsz=200, resize=224)
 		db_val = DataLoader(mini_val, batchsz, shuffle=True, num_workers=2, pin_memory=True)
 
